@@ -22,8 +22,9 @@ async function start() {
         headers: {
             "cookie": cookie_str,
         }
-    }).pipe(fs.createWriteStream("ofname"))
+    }))
 
+    /*
     https.get(stlurl, res => {
             const stream = fs.createWriteStream('stl.stl');
             res.pipe(stream);
@@ -31,7 +32,7 @@ async function start() {
                 stream.close();
             })
         })
-
+    */
 
     await browser.close()
 }
