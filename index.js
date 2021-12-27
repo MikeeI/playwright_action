@@ -22,7 +22,7 @@ async function start() {
         headers: {
             "cookie": cookie_str,
         }
-    }))
+    });
 
     /*
     https.get(stlurl, res => {
