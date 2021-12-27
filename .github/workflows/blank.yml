@@ -17,7 +17,7 @@ jobs:
       - name: Install dependencies and run tests
         run: |
           npm install npx \
-          npx playwright install-deps chromium \
+          #npx playwright install-deps chromium \
           npm install --save puppeteer node-fetch --verbose
       - name: Download
         run: node index.js
