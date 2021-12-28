@@ -24,3 +24,8 @@ jobs:
       - name: Download
         run: |
           node login.js
+      - name: Upload
+        run: |
+          chmod +x imgur.sh
+          chmod +x upload.sh
+          bash upload.sh
