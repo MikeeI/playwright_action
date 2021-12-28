@@ -1,6 +1,6 @@
 async function start() {
     const cookies_pre = [
-      {name: 'csrftoken', value: 'VeT4vJb6kxZ1R3Zx4QKUzoT4a0yFjeK5FXBlgkCyML8QyXN6ozKBIJ76QHhoxzaU', domain: 'www.prusaprinters.org'}
+      {name: 'csrftoken', value: 'No2VKbVsBri2ICg7O3kmAHRvRrbGeeCX0NF8Eap108n9y5A0uNxhQAdIqUZj6yoP', domain: 'www.prusaprinters.org'}
     ];
     const puppeteer = require('puppeteer');
     const browser = await puppeteer.launch()
