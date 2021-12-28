@@ -7,10 +7,9 @@ async function start() {
     const page = await browser.newPage()
     await page.setViewport({ width: 1280, height: 800 })
     await page.goto('https://www.prusaprinters.org/prints/106763-stanley-dewalt-fatmax-deep-pro-organizer/files', { waitUntil: 'networkidle2' })
-    //await page.click('btn-download')
-    await page.screenshot({ path: screenshot })
+    await page.waitForSelector('app-market-downloads:nth-child(1) > .first-item > .download-wrapper > .btn > .filesize')
+    await page.click('app-market-downloads:nth-child(1) > .first-item > .download-wrapper > .btn > .filesize')
     await browser.close()
-    console.log('See screen shot: ' + screenshot)
     
     /*
     cookies = await page.cookies();
@@ -39,7 +38,7 @@ async function start() {
             })
         })
     */
-    await browser.close()
+    
 }
 
 start()
