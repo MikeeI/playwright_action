@@ -9,7 +9,7 @@ async function start() {
   
     await page.setCookie(...cookies);
     await page.setViewport({ width: 1278, height: 1312 })
-    await page.goto('https://www.prusaprinters.org/prints/106763-stanley-dewalt-fatmax-deep-pro-organizer')
+    await page.goto('https://www.prusaprinters.org/prints/106763-stanley-dewalt-fatmax-deep-pro-organizer', { waitUntil: 'networkidle2' })
     await page.screenshot({
         path: 'screenshot-1.png',
     });
