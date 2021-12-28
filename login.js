@@ -11,14 +11,14 @@ async function start() {
     await page.setViewport({ width: 1278, height: 1312 })
     await page.goto('https://www.prusaprinters.org/prints/106763-stanley-dewalt-fatmax-deep-pro-organizer')
     await page.screenshot({
-        path: '/screenshot-1.png',
+        path: 'screenshot-1.png',
     });
 
     await page.waitForSelector('.d-none > .w-100 > .btn > div > .mr-1 > div > svg > .like-fill > path')
     await page.click('.d-none > .w-100 > .btn > div > .mr-1 > div > svg > .like-fill > path')
     
     await page.screenshot({
-        path: '/screenshot-2.png',
+        path: 'screenshot-2.png',
     });
 
     
