@@ -1,6 +1,6 @@
 async function start() {
-    const cookies = [
-      {name: 'csrftoken', value: 'VeT4vJb6kxZ1R3Zx4QKUzoT4a0yFjeK5FXBlgkCyML8QyXN6ozKBIJ76QHhoxzaU', domain: 'www.prusaprinters.org/'}
+    const cookies_pre = [
+      {name: 'csrftoken', value: 'VeT4vJb6kxZ1R3Zx4QKUzoT4a0yFjeK5FXBlgkCyML8QyXN6ozKBIJ76QHhoxzaU', domain: 'www.prusaprinters.org'}
     ];
     const puppeteer = require('puppeteer');
     const browser = await puppeteer.launch()
@@ -8,7 +8,7 @@ async function start() {
     const page = await browser.newPage()
     const navigationPromise = page.waitForNavigation()
   
-    await page.setCookie(...cookies);
+    await page.setCookie(...cookies_pre);
     await page.setViewport({ width: 1278, height: 1312 })
     await page.goto('https://www.prusaprinters.org/prints/106763-stanley-dewalt-fatmax-deep-pro-organizer', { waitUntil: 'networkidle2' })
     await page.screenshot({
