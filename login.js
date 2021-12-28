@@ -16,14 +16,14 @@ async function start() {
     
     console.log(document.cookie);
 
-
+    /*
     await page.waitForSelector('.d-none > .w-100 > .btn > div > .mr-1 > div > svg > .like-fill > path')
     await page.click('.d-none > .w-100 > .btn > div > .mr-1 > div > svg > .like-fill > path')
     
     await page.screenshot({
         path: 'screenshot-2.png',
     });
-
+    */
     
     /*
     await page.waitForSelector('.d-flex > .nav-block > .navbar-nav > .navbar-item:nth-child(6) > .btn')
