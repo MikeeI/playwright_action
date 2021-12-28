@@ -25,7 +25,7 @@ async function start() {
     await page.screenshot({
         path: 'screenshot-2.png',
     });
-    */
+   
     
     /*
     await page.waitForSelector('.d-flex > .nav-block > .navbar-nav > .navbar-item:nth-child(6) > .btn')
