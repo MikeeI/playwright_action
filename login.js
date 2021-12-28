@@ -23,10 +23,19 @@ async function start() {
     await page.type('#id_password', 'Wyi3JVjGmfGwzTtqNFNU2CTP4xH4avXJ')
 
 
-    //await page.waitForSelector('.justify-content-center > .main-content > #recaptcha_form > .form-group > .btn')
+    await page.waitForSelector('.justify-content-center > .main-content > #recaptcha_form > .form-group > .btn')
     await page.click('.justify-content-center > .main-content > #recaptcha_form > .form-group > .btn')
 
     await navigationPromise
+    
+    await page.goto('https://www.prusaprinters.org/prints/106763-stanley-dewalt-fatmax-deep-pro-organizer')
+
+    await page.setViewportSize({ width: 1278, height: 1312 })
+
+    await page.waitForSelector('.d-none > .w-100 > .btn > div > .mr-1 > div > svg > .like-fill > path')
+    await page.click('.d-none > .w-100 > .btn > div > .mr-1 > div > svg > .like-fill > path')
+
+
 
     await browser.close()
 }
