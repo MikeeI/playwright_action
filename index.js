@@ -3,10 +3,16 @@ const fs = require('fs/promises')
 const request = require('request');
 
 async function start() {
-    const browser = await puppeteer.launch()
+    const browser = await puppeteer.launch({ headless: true })
     const page = await browser.newPage()
-
-    await page.goto('https://www.prusaprinters.org/prints/106763-stanley-dewalt-fatmax-deep-pro-organizer/files')
+    await page.setViewport({ width: 1280, height: 800 })
+    await page.goto('https://www.prusaprinters.org/prints/106763-stanley-dewalt-fatmax-deep-pro-organizer/files', { waitUntil: 'networkidle2' })
+    await page.click('btn btn-primary btn-download')
+    await page.waitForSelector('h4.cart-items-header')
+    await page.screenshot({ path: screenshot })
+    await browser.close()
+    console.log('See screen shot: ' + screenshot)
+    /*
     cookies = await page.cookies();
     cookie_str = "";
     for(var i = 0; i < cookies.length; i+=1){
@@ -33,7 +39,7 @@ async function start() {
             })
         })
     */
-
+    */
     await browser.close()
 }
 
