@@ -6,7 +6,7 @@ on:
     - main
 
 jobs:
-  e2e-tests:
+  puppeteer:
     runs-on: ubuntu-latest # or macos-latest, windows-latest
 
     steps:
@@ -19,6 +19,8 @@ jobs:
           npm install npx \
           #npx playwright install-deps chromium \
           npm install --save puppeteer request node-fetch --verbose
+      - name: IP Address
+        run: curl ipinfo.io/json
       - name: Download
         run: node index.js
           
