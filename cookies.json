@@ -1,0 +1,15 @@
+[{
+    "name": "csrftoken",
+    "value": "No2VKbVsBri2ICg7O3kmAHRvRrbGeeCX0NF8Eap108n9y5A0uNxhQAdIqUZj6yoP",
+    "domain": "www.prusaprinters.org",
+    "path": "/",
+    "expires": 1672166996.768771,
+    "size": 73,
+    "httpOnly": false,
+    "secure": false,
+    "session": false,
+    "sameSite": "Lax",
+    "sameParty": false,
+    "sourceScheme": "Secure",
+    "sourcePort": 443
+}]
