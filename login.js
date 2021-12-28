@@ -1,18 +1,10 @@
 async function start() {
-    //const cookies_pre = [
-    //  {name: 'csrftoken', value: 'No2VKbVsBri2ICg7O3kmAHRvRrbGeeCX0NF8Eap108n9y5A0uNxhQAdIqUZj6yoP', domain: 'www.prusaprinters.org'}
-    //];
     const puppeteer = require('puppeteer');
     const browser = await puppeteer.launch()
     const fs = require('fs');
     const page = await browser.newPage()
     const navigationPromise = page.waitForNavigation()
     
-    const cookies = fs.readFileSync('cookies.json', 'utf8')
-    const deserializedCookies = JSON.parse(cookies)
-    await page.setCookie(...deserializedCookies)
-  
-    //await page.setCookie(...cookies_pre);
     await page.setViewport({ width: 1278, height: 1312 })
     
     await page.evaluateOnNewDocument (
@@ -27,13 +19,6 @@ async function start() {
         path: 'screenshot-1.png',
     });
     
-    /*
-    const cookies = await page.cookies()
-    const cookieJson = JSON.stringify(cookies)
-    fs.writeFileSync('cookies.json', cookieJson)
-    console.log(cookieJson)
-    */
-    /*
     await page.waitForSelector('.d-none > .w-100 > .btn > div > .mr-1 > div > svg > .like-fill > path')
     await page.click('.d-none > .w-100 > .btn > div > .mr-1 > div > svg > .like-fill > path')
     
