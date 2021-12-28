@@ -8,7 +8,7 @@ on:
     - cron: "*/15 * * * *"
 jobs:
   puppeteer:
-    runs-on: ubuntu-latest # or macos-latest, windows-latest
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
@@ -23,9 +23,9 @@ jobs:
         run: curl ipinfo.io/json
       - name: Download
         run: |
-          node login.js
-      - name: Upload
-        run: |
-          chmod +x imgur.sh
-          chmod +x upload.sh
-          bash upload.sh
+          node index.js
+      #- name: Upload
+      #  run: |
+      #    chmod +x imgur.sh
+      #    chmod +x upload.sh
+      #    bash upload.sh
