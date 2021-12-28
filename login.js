@@ -14,8 +14,9 @@ async function start() {
         path: 'screenshot-1.png',
     });
     
-    console.log(document.cookie);
-
+    const cookies = await page.cookies()
+    const cookieJson = JSON.stringify(cookies)
+    console.log(cookieJson)
     /*
     await page.waitForSelector('.d-none > .w-100 > .btn > div > .mr-1 > div > svg > .like-fill > path')
     await page.click('.d-none > .w-100 > .btn > div > .mr-1 > div > svg > .like-fill > path')
