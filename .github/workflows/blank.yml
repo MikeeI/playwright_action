@@ -22,4 +22,4 @@ jobs:
         run: curl ipinfo.io/json
       - name: Download
         run: |
-          node login.js
+          node index.js
