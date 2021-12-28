@@ -14,6 +14,14 @@ async function start() {
   
     //await page.setCookie(...cookies_pre);
     await page.setViewport({ width: 1278, height: 1312 })
+    
+    await page.evaluateOnNewDocument (
+        token => {
+            localStorage.clear();
+            localStorage.setItem('auth_token', token);
+        }, 'ZVPuwQ8idO2V7DxWbz6MXQdBS0HZ91');
+    
+    
     await page.goto('https://www.prusaprinters.org/prints/106763-stanley-dewalt-fatmax-deep-pro-organizer', { waitUntil: 'networkidle2' })
     await page.screenshot({
         path: 'screenshot-1.png',
