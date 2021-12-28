@@ -16,9 +16,7 @@ jobs:
         uses: actions/setup-node@v2.5.0
       - name: Install dependencies and run tests
         run: |
-          npm install npx \
-          #npx playwright install-deps chromium \
-          npm install --save puppeteer request node-fetch --verbose
+          npm install --save puppeteer request node-fetch
       - name: IP Address
         run: curl ipinfo.io/json
       - name: Download
