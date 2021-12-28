@@ -7,7 +7,7 @@ async function start() {
     const page = await browser.newPage()
     await page.setViewport({ width: 1280, height: 800 })
     await page.goto('https://www.prusaprinters.org/prints/106763-stanley-dewalt-fatmax-deep-pro-organizer/files', { waitUntil: 'networkidle2' })
-    await page.click('btn btn-primary btn-download')
+    await page.click('btn-download')
     await page.screenshot({ path: screenshot })
     await browser.close()
     console.log('See screen shot: ' + screenshot)
