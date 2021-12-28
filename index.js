@@ -39,7 +39,6 @@ async function start() {
             })
         })
     */
-    */
     await browser.close()
 }
 
