@@ -1,14 +1,20 @@
 async function start() {
-
+    const cookies = [
+      {name: 'csrftoken', value: 'VeT4vJb6kxZ1R3Zx4QKUzoT4a0yFjeK5FXBlgkCyML8QyXN6ozKBIJ76QHhoxzaU', domain: 'www.prusaprinters.org/'}
+    ];
     const puppeteer = require('puppeteer');
     const browser = await puppeteer.launch()
     const page = await browser.newPage()
     const navigationPromise = page.waitForNavigation()
-
-    await page.goto('https://www.prusaprinters.org/prints/106763-stanley-dewalt-fatmax-deep-pro-organizer')
-
+  
+    await page.setCookie(...cookies);
     await page.setViewport({ width: 1278, height: 1312 })
-
+    await page.goto('https://www.prusaprinters.org/prints/106763-stanley-dewalt-fatmax-deep-pro-organizer')
+    
+    await page.waitForSelector('.d-none > .w-100 > .btn > div > .mr-1 > div > svg > .like-fill > path')
+    await page.click('.d-none > .w-100 > .btn > div > .mr-1 > div > svg > .like-fill > path')
+    
+    /*
     await page.waitForSelector('.d-flex > .nav-block > .navbar-nav > .navbar-item:nth-child(6) > .btn')
     await page.click('.d-flex > .nav-block > .navbar-nav > .navbar-item:nth-child(6) > .btn')
 
@@ -33,7 +39,7 @@ async function start() {
     await page.waitForSelector('.d-none > .w-100 > .btn > div > .mr-1 > div > svg > .like-fill > path')
     await page.click('.d-none > .w-100 > .btn > div > .mr-1 > div > svg > .like-fill > path')
 
-
+    */
 
     await browser.close()
 }
