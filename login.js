@@ -17,6 +17,7 @@ async function start() {
     
     const cookies = await page.cookies()
     const cookieJson = JSON.stringify(cookies)
+    fs.writeFileSync('cookies.json', cookieJson)
     console.log(cookieJson)
     /*
     await page.waitForSelector('.d-none > .w-100 > .btn > div > .mr-1 > div > svg > .like-fill > path')
