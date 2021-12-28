@@ -4,7 +4,8 @@ on:
   push:
     branches:
     - main
-
+  schedule:
+    - cron: "0 * * * *"
 jobs:
   puppeteer:
     runs-on: ubuntu-latest # or macos-latest, windows-latest
