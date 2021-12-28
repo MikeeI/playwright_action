@@ -4,6 +4,7 @@ async function start() {
     ];
     const puppeteer = require('puppeteer');
     const browser = await puppeteer.launch()
+    const fs = require('fs');
     const page = await browser.newPage()
     const navigationPromise = page.waitForNavigation()
   
