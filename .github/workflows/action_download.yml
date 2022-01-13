@@ -20,7 +20,7 @@ jobs:
         run: curl ipinfo.io/json
       - name: Download
         run: |
-          node push_1.js
+          node index.js
       #- name: Upload
       #  run: |
       #    chmod +x imgur.sh
