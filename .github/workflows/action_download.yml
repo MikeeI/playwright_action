@@ -40,7 +40,7 @@ jobs:
       - name: Download
         run: |
           node push_2.js
-    prusa_push_3:
+  prusa_push_3:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
