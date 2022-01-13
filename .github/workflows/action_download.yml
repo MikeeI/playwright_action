@@ -9,6 +9,7 @@ on:
 jobs:
   prusa_download:
     runs-on: ubuntu-latest
+    timeout-minutes: 3
     steps:
       - uses: actions/checkout@v2
       - name: Setup NodeJS
