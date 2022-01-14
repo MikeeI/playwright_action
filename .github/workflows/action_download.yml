@@ -21,7 +21,7 @@ jobs:
         run: curl ipinfo.io/json
       - name: Download
         run: |
-          node index.js
+          node push_1.js
   prusa_download_2:
     runs-on: ubuntu-latest
     timeout-minutes: 3
