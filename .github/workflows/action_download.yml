@@ -36,7 +36,7 @@ jobs:
         run: curl ipinfo.io/json
       - name: Download
         run: |
-          node index.js
+          node push_2.js
   prusa_download_3:
     runs-on: ubuntu-latest
     timeout-minutes: 3
@@ -51,7 +51,7 @@ jobs:
         run: curl ipinfo.io/json
       - name: Download
         run: |
-          node index.js
+          node push_3.js
       #- name: Upload
       #  run: |
       #    chmod +x imgur.sh
