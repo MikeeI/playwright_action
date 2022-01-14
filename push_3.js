@@ -2,14 +2,18 @@ const puppeteer = require('puppeteer')
 const fs = require('fs/promises')
 const request = require('request');
 
-async function start() {
+async function start(url) {
     const browser = await puppeteer.launch({ headless: true })
     const page = await browser.newPage()
-    await page.setViewport({ width: 1280, height: 800 })
-    await page.goto('https://www.prusaprinters.org/prints/106763-stanley-dewalt-fatmax-deep-pro-organizer/files', { waitUntil: 'networkidle2' })
-   
-    await page.waitForSelector('app-market-downloads:nth-child(1) > .first-item > .download-wrapper > .btn > .filesize')
-    await page.click('app-market-downloads:nth-child(1) > .first-item > .download-wrapper > .btn > .filesize')    
+    const navigationPromise = page.waitForNavigation()
+
+    await page.goto(url)
+    await page.setViewport({ width: 2560, height: 1600 })
+    await navigationPromise
+    await page.waitForSelector('.max-width-md > app-market-downloads:nth-child(1) > .first-item > .download-wrapper > .btn')
+    await page.click('.max-width-md > app-market-downloads:nth-child(1) > .first-item > .download-wrapper > .btn')
+
+    await browser.close()
 }
 
-start()
+start('https://www.prusaprinters.org/prints/117619-alpaca-buddha-llama-buddha/files')
