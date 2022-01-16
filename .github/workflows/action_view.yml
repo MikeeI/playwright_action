@@ -22,7 +22,7 @@ jobs:
       - name: Download
         run: |
           node view_1.js
-prusa_view_4:
+  prusa_view_4:
     runs-on: ubuntu-latest
     timeout-minutes: 3
     steps:
