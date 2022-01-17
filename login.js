@@ -1,7 +1,10 @@
-async function start() {
-    const puppeteer = require('puppeteer');
-    const browser = await puppeteer.launch()
-    const fs = require('fs');
+const puppeteer = require('puppeteer')
+const fs = require('fs/promises')
+const request = require('request');
+
+
+async function start(url) {
+    const browser = await puppeteer.launch({ headless: true })
     const page = await browser.newPage()
     const navigationPromise = page.waitForNavigation()
     
@@ -11,14 +14,17 @@ async function start() {
         token => {
             localStorage.clear();
             localStorage.setItem('auth_token', token);
-        }, 'ZVPuwQ8idO2V7DxWbz6MXQdBS0HZ91');
+        }, 'oMxCaMHeBCKjnnQ0cAdzbkXKqH4d70');
     
     
-    await page.goto('https://www.prusaprinters.org/prints/117767-l-boxx-bit-hex-holder-lboxx-also-known-as-sortimo', { waitUntil: 'networkidle2' })
+    await page.goto(url, { waitUntil: 'networkidle2' })
     await page.screenshot({
         path: 'screenshot-1.png',
     });
     
+    await page.waitForSelector('.d-none > .w-100 > .btn > div > .mr-1 > div > svg > .like-fill > path')
+    await page.click('.d-none > .w-100 > .btn > div > .mr-1 > div > svg > .like-fill > path')
+
     await page.waitForSelector('.d-none > .w-100 > .btn > div > .mr-1 > div > svg > .like-fill > path')
     await page.click('.d-none > .w-100 > .btn > div > .mr-1 > div > svg > .like-fill > path')
     
@@ -26,6 +32,7 @@ async function start() {
         path: 'screenshot-2.png',
     });
    
+    setTimeout(() => { browser.close(); }, 6000);
     
     /*
     await page.waitForSelector('.d-flex > .nav-block > .navbar-nav > .navbar-item:nth-child(6) > .btn')
@@ -53,8 +60,7 @@ async function start() {
     await page.click('.d-none > .w-100 > .btn > div > .mr-1 > div > svg > .like-fill > path')
 
     */
-
-    await browser.close()
 }
 
-start()
+start('https://www.prusaprinters.org/prints/117767-l-boxx-bit-hex-holder-lboxx-also-known-as-sortimo')
+start('https://www.prusaprinters.org/prints/118424-vacuumroborockroobma-laundry-stopper-and-run-over-')
