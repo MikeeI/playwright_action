@@ -12,8 +12,7 @@ async function start(url) {
     await navigationPromise
     await page.waitForSelector('.max-width-md > app-market-downloads:nth-child(1) > .first-item > .download-wrapper > .btn')
     //await page.click('.max-width-md > app-market-downloads:nth-child(1) > .first-item > .download-wrapper > .btn')
-    await delay(4000);
-    await browser.close()
+    setTimeout(() => { browser.close(); }, 3000);
 }
 
 start('https://www.prusaprinters.org/prints/106763-stanley-dewalt-fatmax-deep-pro-organizer/files')
