@@ -6,6 +6,7 @@ on:
     - main
   schedule:
    - cron: "*/5 * * * *"
+  workflow_dispatch:
 jobs:
   prusa_view_1:
     runs-on: ubuntu-latest
