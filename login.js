@@ -6,9 +6,9 @@ const fs = require('fs');
 
 let json_db = fs.readFileSync('db.json');
 let rows = JSON.parse(json_db);
-console.log(rows);
+console.log(rows[0]);
 
-rows.forEach(element => console.log(element));
+//rows.forEach(element => console.log(element));
 
 
 async function like_url(url) {
@@ -69,7 +69,7 @@ async function like_url(url) {
     await page.click('.d-none > .w-100 > .btn > div > .mr-1 > div > svg > .like-fill > path')
 
     */
-    setTimeout(() => { browser.close(); }, 6000);
+    //setTimeout(() => { browser.close(); }, 6000);
 }
 
 like_url('https://www.prusaprinters.org/prints/117767-l-boxx-bit-hex-holder-lboxx-also-known-as-sortimo')
