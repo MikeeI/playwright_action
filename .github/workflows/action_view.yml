@@ -7,7 +7,7 @@ on:
   schedule:
    - cron: "*/5 * * * *"
 jobs:
-  prusa_view_1:
+  prusa _view_1:
     runs-on: ubuntu-latest
     timeout-minutes: 3
     steps:
@@ -22,6 +22,37 @@ jobs:
       - name: Download
         run: |
           node view_1.js
+  prusa _view_2:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup NodeJS
+        uses: actions/setup-node@v2.5.0
+      - name: Install Puppeteer
+        run: |
+          npm install --save puppeteer request node-fetch
+      - name: IP Address
+        run: curl ipinfo.io/json
+      - name: Download
+        run: |
+          node view_2.js
+
+  prusa _view_3:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup NodeJS
+        uses: actions/setup-node@v2.5.0
+      - name: Install Puppeteer
+        run: |
+          npm install --save puppeteer request node-fetch
+      - name: IP Address
+        run: curl ipinfo.io/json
+      - name: Download
+        run: |
+          node view_3.js
   prusa_view_4:
     runs-on: ubuntu-latest
     timeout-minutes: 3
