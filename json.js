@@ -10,7 +10,7 @@ for (var i = 0; i < rows.length; i++){
   for (var key in element){
     var value = element[key];
     console.log(element);
-    if(element["like"] == "false")
+    if(element["like"] == false)
     {
       console.log("Not liked")
     }
