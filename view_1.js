@@ -10,9 +10,12 @@ async function start(url) {
     await page.goto(url)
     await page.setViewport({ width: 2560, height: 1600 })
     await navigationPromise
-    await page.waitForSelector('.max-width-md > app-market-downloads:nth-child(1) > .first-item > .download-wrapper > .btn')
-    //await page.click('.max-width-md > app-market-downloads:nth-child(1) > .first-item > .download-wrapper > .btn')
-    setTimeout(() => { browser.close(); }, 3000);
+    await delay(4000);
+    await page.waitForSelector('.detail-content > .row > .col-auto > .views > .number')
+    let element = await page.$('.detail-content > .row > .col-auto > .views > .number')
+    let value = await page.evaluate(el => el.textContent, element)
+    echo "Number: $value"
+    await browser.close()
 }
 
-start('https://www.prusaprinters.org/prints/106763-stanley-dewalt-fatmax-deep-pro-organizer/files')
+start('https://www.prusaprinters.org/prints/106763-stanley-dewalt-fatmax-deep-pro-organizer')
