@@ -22,5 +22,5 @@ jobs:
         run: curl ipinfo.io/json
       - name: Download
         run: |
-          bash script_view.sh
+          bash script_views.sh
 
