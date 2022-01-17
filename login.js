@@ -1,8 +1,12 @@
 const puppeteer = require('puppeteer')
-const fs = require('fs/promises')
+//const fs = require('fs/promises')
 const request = require('request');
-    
 
+const fs = require('fs');
+
+let rawdata = fs.readFileSync('db.json');
+let student = JSON.parse(rawdata);
+console.log(student);
 
 async function like_url(url) {
     const browser = await puppeteer.launch({ headless: true })
@@ -10,7 +14,7 @@ async function like_url(url) {
     const navigationPromise = page.waitForNavigation()
     
     await page.setViewport({ width: 1278, height: 1312 })
-    
+    /*
     await page.evaluateOnNewDocument (
         token => {
             localStorage.clear();
@@ -33,7 +37,7 @@ async function like_url(url) {
         path: 'screenshot-2.png',
     });
    
-    
+    */
     
     /*
     await page.waitForSelector('.d-flex > .nav-block > .navbar-nav > .navbar-item:nth-child(6) > .btn')
