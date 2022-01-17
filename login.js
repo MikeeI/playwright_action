@@ -4,17 +4,18 @@ const request = require('request');
 
 const fs = require('fs');
 
-let rawdata = fs.readFileSync('db.json');
-let student = JSON.parse(rawdata);
-console.log(student);
+let json_db = fs.readFileSync('db.json');
+let rows = JSON.parse(json_db);
+console.log(rows);
 
 async function like_url(url) {
+    /*
     const browser = await puppeteer.launch({ headless: true })
     const page = await browser.newPage()
     const navigationPromise = page.waitForNavigation()
     
     await page.setViewport({ width: 1278, height: 1312 })
-    /*
+    
     await page.evaluateOnNewDocument (
         token => {
             localStorage.clear();
