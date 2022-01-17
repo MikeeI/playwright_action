@@ -1,3 +1,4 @@
+const fs = require('fs');
 let json_db = fs.readFileSync('db.json');
 let rows = JSON.parse(json_db);
 console.log(rows[0]);
