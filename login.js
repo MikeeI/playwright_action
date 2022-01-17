@@ -1,10 +1,11 @@
 const puppeteer = require('puppeteer')
 const fs = require('fs/promises')
 const request = require('request');
-    const browser = await puppeteer.launch({ headless: true })
+    
 
 
 async function start(url) {
+    const browser = await puppeteer.launch({ headless: true })
     const page = await browser.newPage()
     const navigationPromise = page.waitForNavigation()
     
@@ -60,8 +61,9 @@ async function start(url) {
     await page.click('.d-none > .w-100 > .btn > div > .mr-1 > div > svg > .like-fill > path')
 
     */
+    setTimeout(() => { browser.close(); }, 6000);
 }
 
 //start('https://www.prusaprinters.org/prints/117767-l-boxx-bit-hex-holder-lboxx-also-known-as-sortimo')
 start('https://www.prusaprinters.org/prints/118424-vacuumroborockroobma-laundry-stopper-and-run-over-')
-setTimeout(() => { browser.close(); }, 6000);
+
