@@ -12,7 +12,7 @@ async function start(url) {
     await navigationPromise
     await page.waitForSelector('.max-width-md > app-market-downloads:nth-child(1) > .first-item > .download-wrapper > .btn')
     //await page.click('.max-width-md > app-market-downloads:nth-child(1) > .first-item > .download-wrapper > .btn')
-
+    await delay(4000);
     await browser.close()
 }
 
