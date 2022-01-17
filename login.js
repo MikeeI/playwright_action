@@ -8,6 +8,9 @@ let json_db = fs.readFileSync('db.json');
 let rows = JSON.parse(json_db);
 console.log(rows);
 
+rows.forEach(element => console.log(element));
+
+
 async function like_url(url) {
     /*
     const browser = await puppeteer.launch({ headless: true })
