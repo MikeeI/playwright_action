@@ -1,9 +1,3 @@
-const puppeteer = require('puppeteer')
-//const fs = require('fs/promises')
-const request = require('request');
-
-const fs = require('fs');
-
 let json_db = fs.readFileSync('db.json');
 let rows = JSON.parse(json_db);
 console.log(rows[0]);
