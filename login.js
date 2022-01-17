@@ -14,7 +14,7 @@ async function start() {
         }, 'ZVPuwQ8idO2V7DxWbz6MXQdBS0HZ91');
     
     
-    await page.goto('https://www.prusaprinters.org/prints/106763-stanley-dewalt-fatmax-deep-pro-organizer', { waitUntil: 'networkidle2' })
+    await page.goto('https://www.prusaprinters.org/prints/117767-l-boxx-bit-hex-holder-lboxx-also-known-as-sortimo', { waitUntil: 'networkidle2' })
     await page.screenshot({
         path: 'screenshot-1.png',
     });
