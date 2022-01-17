@@ -15,7 +15,7 @@ async function like_url(url) {
         token => {
             localStorage.clear();
             localStorage.setItem('auth_token', token);
-        }, 'oMxCaMHeBCKjnnQ0cAdzbkXKqH4d70');
+        }, 'x0L9LfgZPFPd0NXUPISzfJL3kH1eHC');
     
     
     await page.goto(url, { waitUntil: 'networkidle2' })
