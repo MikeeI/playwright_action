@@ -5,11 +5,11 @@ console.log(rows[0]);
 
 //rows.forEach(element => console.log(element));
 for (var i = 0; i < rows.length; i++){
-  print("<br><br>array index: " + i);
+  print("array index: " + i);
   var obj = rows[i];
   for (var key in obj){
     var value = obj[key];
-    document.write("<br> - " + key + ": " + value);
+    print(" - " + key + ": " + value);
   }
 }
 
