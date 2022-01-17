@@ -13,8 +13,8 @@ async function start(url) {
     await delay(4000);
     await page.waitForSelector('.detail-content > .row > .col-auto > .views > .number')
     let element = await page.$('.detail-content > .row > .col-auto > .views > .number')
-    let value = await page.evaluate(el => el.textContent, element)
-    echo "Number: $value"
+    const text = await page.evaluate(element => element.textContent, element);
+    console.log(text)
     await browser.close()
 }
 
