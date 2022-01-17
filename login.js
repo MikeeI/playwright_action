@@ -1,10 +1,10 @@
 const puppeteer = require('puppeteer')
 const fs = require('fs/promises')
 const request = require('request');
+    const browser = await puppeteer.launch({ headless: true })
 
 
 async function start(url) {
-    const browser = await puppeteer.launch({ headless: true })
     const page = await browser.newPage()
     const navigationPromise = page.waitForNavigation()
     
@@ -32,7 +32,7 @@ async function start(url) {
         path: 'screenshot-2.png',
     });
    
-    setTimeout(() => { browser.close(); }, 6000);
+    
     
     /*
     await page.waitForSelector('.d-flex > .nav-block > .navbar-nav > .navbar-item:nth-child(6) > .btn')
@@ -62,5 +62,6 @@ async function start(url) {
     */
 }
 
-start('https://www.prusaprinters.org/prints/117767-l-boxx-bit-hex-holder-lboxx-also-known-as-sortimo')
-//start('https://www.prusaprinters.org/prints/118424-vacuumroborockroobma-laundry-stopper-and-run-over-')
+//start('https://www.prusaprinters.org/prints/117767-l-boxx-bit-hex-holder-lboxx-also-known-as-sortimo')
+start('https://www.prusaprinters.org/prints/118424-vacuumroborockroobma-laundry-stopper-and-run-over-')
+setTimeout(() => { browser.close(); }, 6000);
