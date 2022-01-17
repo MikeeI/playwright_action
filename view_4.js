@@ -13,7 +13,9 @@ async function start(url) {
     //await page.waitForSelector('.max-width-md > app-market-downloads:nth-child(1) > .first-item > .download-wrapper > .btn')
     //await page.click('.max-width-md > app-market-downloads:nth-child(1) > .first-item > .download-wrapper > .btn')
 
-    await browser.close()
+    console.log(text)
+    setTimeout(() => { browser.close(); }, 8000);
+
 }
 
 start('https://www.prusaprinters.org/prints/118424-vacuumroborockroobma-laundry-stopper-and-run-over-')
