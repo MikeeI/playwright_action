@@ -14,8 +14,7 @@ async function start(url) {
     let element = await page.$('.detail-content > .row > .col-auto > .views > .number')
     const text = await page.evaluate(element => element.textContent, element);
     console.log(text)
-    setTimeout(() => { browser.close(); }, 3000);
-
+    setTimeout(() => { browser.close(); }, 6000);
 }
 
 start('https://www.prusaprinters.org/prints/106763-stanley-dewalt-fatmax-deep-pro-organizer')
