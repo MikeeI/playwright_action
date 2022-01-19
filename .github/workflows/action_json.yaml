@@ -16,4 +16,11 @@ jobs:
       - name: json
         run: |
           node json.js
+      - name: Commit report
+        run: |
+          git config --global user.name 'MikeeI'
+          git config --global user.email 'MikeeI@users.noreply.github.com'
+          git add db2.json
+          git commit -am "Automated report"
+          git push
 
