@@ -11,6 +11,7 @@ console.log(rows[0]);
 //rows.forEach(element => console.log(element));
 for (var i = 0; i < rows.length; i++){
   //document.write("<br><br>array index: " + i);
+  rows[i]["like"]="true"
   var obj = rows[i];
   for (var key in obj){
     var value = obj[key];
@@ -18,6 +19,8 @@ for (var i = 0; i < rows.length; i++){
     //document.write("<br> - " + key + ": " + value);
   }
 }
+
+fs.writeFileSync('db2.json', JSON.stringify(rows, null, 2));
 
 async function like_url(url) {
     /*
