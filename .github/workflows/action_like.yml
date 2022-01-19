@@ -23,8 +23,15 @@ jobs:
       - name: Like
         run: |
           node login.js
-      - name: Upload
+      #- name: Upload
+      #  run: |
+      #    chmod +x imgur.sh
+      #    chmod +x upload.sh
+      #    bash upload.sh
+      - name: Commit report
         run: |
-          chmod +x imgur.sh
-          chmod +x upload.sh
-          bash upload.sh
+          git config --global user.name 'MikeeI'
+          git config --global user.email 'MikeeI@users.noreply.github.com'
+          git add -A
+          git commit -am "Automated report"
+          git push
