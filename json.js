@@ -18,5 +18,6 @@ for (var i = 0; i < rows.length; i++){
   }
 }
 
+fs.writeFileSync('db2.json', JSON.stringify(rows, null, 2));
 
 
