@@ -6,6 +6,7 @@ console.log(rows[0]);
 //rows.forEach(element => console.log(element));
 for (var i = 0; i < rows.length; i++){
   console.log("array index: " + i);
+  
   var element = rows[i];
   for (var key in element){
     var value = element[key];
@@ -16,6 +17,7 @@ for (var i = 0; i < rows.length; i++){
     }
     //console.log(" - " + key + ": " + value);
   }
+  rows[i]["like"]="true"
 }
 
 fs.writeFileSync('db2.json', JSON.stringify(rows, null, 2));
