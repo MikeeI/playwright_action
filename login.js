@@ -14,7 +14,7 @@ for (var i = 0; i < rows.length; i++){
   var obj = rows[i];
   for (var key in obj){
     var value = obj[key];
-    console.log(obj[1])
+    console.log(obj["like"])
     //document.write("<br> - " + key + ": " + value);
   }
 }
