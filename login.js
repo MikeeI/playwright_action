@@ -21,7 +21,7 @@ for (var i = 0; i < rows.length; i++) {
     }
 }
 
-fs.writeFileSync('db2.json', JSON.stringify(rows, null, 2));
+fs.writeFileSync('db.json', JSON.stringify(rows, null, 2));
 
 
 /*
@@ -109,7 +109,7 @@ async function like_url(url,auth_token) {
     await page.click('.d-none > .w-100 > .btn > div > .mr-1 > div > svg > .like-fill > path')
 
     */
-    //setTimeout(() => { browser.close(); }, 6000);
+    setTimeout(() => { browser.close(); }, 6000);
 }
 
 //like_url('https://www.prusaprinters.org/prints/117767-l-boxx-bit-hex-holder-lboxx-also-known-as-sortimo')
