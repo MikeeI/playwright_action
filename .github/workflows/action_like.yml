@@ -21,14 +21,16 @@ jobs:
       - name: IP Address
         run: curl ipinfo.io/json
       - name: Like
+        continue-on-error: true
         run: |
           node login.js
-      #- name: Upload
-      #  run: |
-      #    chmod +x imgur.sh
-      #    chmod +x upload.sh
-      #    bash upload.sh
+      - name: Upload
+        run: |
+          chmod +x imgur.sh
+          chmod +x upload.sh
+          bash upload.sh
       - name: Commit report
+        continue-on-error: true
         run: |
           git config --global user.name 'MikeeI'
           git config --global user.email 'MikeeI@users.noreply.github.com'
