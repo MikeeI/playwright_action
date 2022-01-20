@@ -81,7 +81,7 @@ async function like_url(url,auth_token) {
         path: 'screenshot-2.png',
     });
    
-    */
+    
     
     /*
     await page.waitForSelector('.d-flex > .nav-block > .navbar-nav > .navbar-item:nth-child(6) > .btn')
