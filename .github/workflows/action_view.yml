@@ -10,10 +10,6 @@ on:
 jobs:
   prusa_view_1:
     runs-on: ubuntu-latest
-    strategy:
-       fail-fast: false
-       matrix:
-         runner: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
     timeout-minutes: 3
     steps:
       - uses: actions/checkout@v2
@@ -71,6 +67,10 @@ jobs:
   prusa_view_5:
     runs-on: ubuntu-latest
     timeout-minutes: 3
+    strategy:
+       fail-fast: false
+       matrix:
+         runner: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
     steps:
       - uses: actions/checkout@v2
       - name: Setup NodeJS
