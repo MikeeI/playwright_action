@@ -73,4 +73,18 @@ jobs:
       #    chmod +x imgur.sh
       #    chmod +x upload.sh
       #    bash upload.sh 
-  
+  prusa_download_5:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup NodeJS
+        uses: actions/setup-node@v2.5.0
+      - name: Install Puppeteer
+        run: |
+          npm install --save puppeteer request node-fetch
+      - name: IP Address
+        run: curl ipinfo.io/json
+      - name: Download
+        run: |
+          node push_5.js
