@@ -17,7 +17,7 @@ for (var i = 0; i < rows.length; i++){
     }
     //console.log(" - " + key + ": " + value);
   }
-  rows[i]["like"]="true"
+  rows[i]["like"]="xoxo"
 }
 
 fs.writeFileSync('db2.json', JSON.stringify(rows, null, 2));
