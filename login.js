@@ -7,7 +7,7 @@ let json_db = fs.readFileSync('db.json');
 let rows = JSON.parse(json_db);
 
 account = "booths.revise_0n@icloud.com"
-auth_token = "x0L9LfgZPFPd0NXUPISzfJL3kH1eHC"
+auth_token = "6JkUClLCZKPGfnfXFuKNeVJo8AIVF2"
 
 for (var i = 0; i < rows.length; i++) {
 
