@@ -17,6 +17,7 @@ jobs:
         run: |
           node json.js
       - name: Commit report
+        continue-on-error: true
         run: |
           git config --global user.name 'MikeeI'
           git config --global user.email 'MikeeI@users.noreply.github.com'
