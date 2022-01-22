@@ -11,6 +11,15 @@ async function start(url) {
     await page.setViewport({ width: 2560, height: 1600 })
     await navigationPromise
     
+    page.on('request', (request) => {
+        // Block All Images
+        if (request.url().includes('cookiepro.com') || request.url().includes('onetrust')) {
+            request.abort();
+        } else {
+            request.continue()
+        }
+    });
+    
     await page.waitForSelector('#onetrust-accept-btn-handler')
     await page.click('#onetrust-accept-btn-handler')
     
