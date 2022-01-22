@@ -6,20 +6,13 @@ async function start(url) {
     const browser = await puppeteer.launch({ headless: true })
     const page = await browser.newPage()
     const navigationPromise = page.waitForNavigation()
-    await page.setRequestInterception(true)
+
     await page.goto(url)
     await page.setViewport({ width: 2560, height: 1600 })
     await navigationPromise
     
-    page.on('request', (request) => {
-        // Block All Images
-        if (request.url().includes('cookiepro.com') || request.url().includes('onetrust')) {
-            request.abort();
-        } else {
-            request.continue()
-        }
-    });
-    
+    await page.waitForSelector('#onetrust-accept-btn-handler')
+    await page.click('#onetrust-accept-btn-handler')
     
     await page.waitForTimeout(5000); // wait for 5 seconds
 
