@@ -21,7 +21,13 @@ async function start(url) {
     
     const text = await page.evaluate(element => element.textContent, element);  
     console.log(text)
+        
+    await page.screenshot({
+        path: 'screenshot-2.png',
+    });
     setTimeout(() => { browser.close(); }, 6000);
+
+        
 }
 
 start('https://www.prusaprinters.org/prints/118424-vacuumroborockroobma-laundry-stopper-and-run-over-/files')
