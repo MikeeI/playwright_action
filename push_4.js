@@ -6,7 +6,7 @@ async function start(url) {
     const browser = await puppeteer.launch({ headless: true })
     const page = await browser.newPage()
     const navigationPromise = page.waitForNavigation()
-
+    await page.setRequestInterception(true)
     await page.goto(url)
     await page.setViewport({ width: 2560, height: 1600 })
     await navigationPromise
