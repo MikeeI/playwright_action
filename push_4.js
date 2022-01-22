@@ -14,10 +14,8 @@ async function start(url) {
     await page.waitForSelector('#onetrust-accept-btn-handler')
     await page.click('#onetrust-accept-btn-handler')
     
-    setTimeout(() => { 
-        console.log("Timeout");
-        
-    }, 6000);
+    await page.waitForTimeout(5000); // wait for 5 seconds
+
     await page.waitForSelector('app-market-downloads:nth-child(1) > .download-item > .download-wrapper > .btn > .fa')
     await page.click('app-market-downloads:nth-child(1) > .download-item > .download-wrapper > .btn > .fa')
 
