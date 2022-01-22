@@ -68,18 +68,18 @@ jobs:
       - name: Download
         run: |
           node push_4.js
-      #- name: Upload
-      #  run: |
-      #    chmod +x imgur.sh
-      #    chmod +x upload.sh
-      #    bash upload.sh 
+      - name: Upload
+        run: |
+          chmod +x imgur.sh
+          chmod +x upload.sh
+          bash upload.sh 
   prusa_download_5:
     runs-on: ubuntu-latest
     timeout-minutes: 3
     strategy:
        fail-fast: false
        matrix:
-         runner: [0,1,2,3,4,5]
+         runner: [0]
     steps:
       - uses: actions/checkout@v2
       - name: Setup NodeJS
