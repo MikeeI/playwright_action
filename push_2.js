@@ -10,10 +10,13 @@ async function start(url) {
     await page.goto(url)
     await page.setViewport({ width: 2560, height: 1600 })
     await navigationPromise
-    await page.waitForSelector('.max-width-md > app-market-downloads:nth-child(1) > .first-item > .download-wrapper > .btn')
-    await page.click('.max-width-md > app-market-downloads:nth-child(1) > .first-item > .download-wrapper > .btn')
-
-    await browser.close()
+    await page.waitForSelector('app-market-downloads > .download-item > .download-wrapper > .btn > .fa')
+    await page.click('app-market-downloads > .download-item > .download-wrapper > .btn > .fa')
+    await page.waitForSelector('.detail-grid > .detail-content > .download-btn > .d-flex > .download-count')
+    let element = await page.$('.detail-grid > .detail-content > .download-btn > .d-flex > .download-count')
+    const text = await page.evaluate(element => element.textContent, element);  
+    
+    setTimeout(() => { browser.close(); }, 6000);
 }
 
 start('https://www.prusaprinters.org/prints/117767-l-boxx-bit-hex-holder-lboxx-also-known-as-sortimo/files')
