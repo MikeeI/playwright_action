@@ -15,7 +15,7 @@ async function start(url) {
     await page.waitForSelector('.detail-grid > .detail-content > .download-btn > .d-flex > .download-count')
     let element = await page.$('.detail-grid > .detail-content > .download-btn > .d-flex > .download-count')
     const text = await page.evaluate(element => element.textContent, element);  
-    
+    console.log(text)
     setTimeout(() => { browser.close(); }, 6000);
 }
 start('https://www.prusaprinters.org/prints/120773-sortimo-l-boxx-bosch-clamp/files')
