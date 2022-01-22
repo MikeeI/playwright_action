@@ -10,6 +10,10 @@ async function start(url) {
     await page.goto(url)
     await page.setViewport({ width: 2560, height: 1600 })
     await navigationPromise
+    
+    await page.waitForSelector('#onetrust-accept-btn-handler')
+    await page.click('#onetrust-accept-btn-handler')
+    
     //await page.waitForSelector('app-market-downloads > .download-item > .download-wrapper > .btn > .fa')
     //await page.click('app-market-downloads > .download-item > .download-wrapper > .btn > .fa')
     
