@@ -20,8 +20,6 @@ async function start(url) {
         }
     });
     
-    await page.waitForSelector('#onetrust-accept-btn-handler')
-    await page.click('#onetrust-accept-btn-handler')
     
     await page.waitForTimeout(5000); // wait for 5 seconds
 
