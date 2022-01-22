@@ -10,8 +10,8 @@ async function start(url) {
     await page.goto(url)
     await page.setViewport({ width: 2560, height: 1600 })
     await navigationPromise
-    await page.waitForSelector('.max-width-md > app-market-downloads:nth-child(1) > .first-item > .download-wrapper > .btn')
-    await page.click('.max-width-md > app-market-downloads:nth-child(1) > .first-item > .download-wrapper > .btn')
+    await page.waitForSelector('app-market-downloads > .download-item > .download-wrapper > .btn > .fa')
+    await page.click('app-market-downloads > .download-item > .download-wrapper > .btn > .fa')
 
     await browser.close()
 }
