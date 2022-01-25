@@ -11,6 +11,10 @@ jobs:
   prusa_download_1:
     runs-on: ubuntu-latest
     timeout-minutes: 3
+    strategy:
+       fail-fast: false
+       matrix:
+         runner: [0,1,2]
     steps:
       - uses: actions/checkout@v2
       - name: Setup NodeJS
@@ -26,6 +30,10 @@ jobs:
   prusa_download_2:
     runs-on: ubuntu-latest
     timeout-minutes: 3
+    strategy:
+       fail-fast: false
+       matrix:
+         runner: [0,1,2]
     steps:
       - uses: actions/checkout@v2
       - name: Setup NodeJS
