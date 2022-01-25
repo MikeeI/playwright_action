@@ -29,4 +29,4 @@ async function start(url) {
     });
     setTimeout(() => { browser.close(); }, 6000);
 }
-start('https://www.prusaprinters.org/prints/121028-button-wall-hook/files')
+start('https://www.prusaprinters.org/prints/117767-l-boxx-bit-hex-holder-lboxx-also-known-as-sortimo/files')
