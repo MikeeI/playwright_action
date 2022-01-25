@@ -10,7 +10,6 @@ on:
 jobs:
   prusa_download_1:
     runs-on: ubuntu-latest
-    continue-on-error: true
     timeout-minutes: 3
     strategy:
        fail-fast: false
@@ -29,6 +28,7 @@ jobs:
         run: |
           node push_1.js
       - name: Upload
+        continue-on-error: true
         run: |
           chmod +x imgur.sh
           chmod +x upload.sh
