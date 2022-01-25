@@ -16,6 +16,7 @@ async function start(url) {
     
     await page.waitForSelector('app-market-downloads > .download-item > .download-wrapper > .btn > .fa')
     await page.click('app-market-downloads > .download-item > .download-wrapper > .btn > .fa')
+    
     await page.waitForSelector('.detail-grid > .detail-content > .download-btn > .d-flex > .download-count')
     let element = await page.$('.detail-grid > .detail-content > .download-btn > .d-flex > .download-count')
     const text = await page.evaluate(element => element.textContent, element);  
