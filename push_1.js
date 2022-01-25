@@ -22,4 +22,4 @@ async function start(url) {
     console.log(text)
     setTimeout(() => { browser.close(); }, 6000);
 }
-start('https://www.prusaprinters.org/prints/106763-stanley-dewalt-fatmax-deep-pro-organizer/files')
+start('https://www.prusaprinters.org/prints/124233-stackable-tray-for-lego/files')
