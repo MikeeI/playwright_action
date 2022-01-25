@@ -58,7 +58,7 @@ jobs:
           chmod +x imgur.sh
           chmod +x upload.sh
           bash upload.sh 
-prusa_download_3:
+  prusa_download_3:
     runs-on: ubuntu-latest
     timeout-minutes: 3
     strategy:
