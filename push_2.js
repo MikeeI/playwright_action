@@ -25,6 +25,6 @@ async function start(url) {
 }
 
 
-start('https://www.prusaprinters.org/prints/117767-l-boxx-bit-hex-holder-lboxx-also-known-as-sortimo/files')
+start('https://www.prusaprinters.org/prints/124234-cable-holder/files')
 
     
