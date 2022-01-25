@@ -20,6 +20,10 @@ async function start(url) {
     let element = await page.$('.detail-grid > .detail-content > .download-btn > .d-flex > .download-count')
     const text = await page.evaluate(element => element.textContent, element);  
     console.log(text)
+    
+    await page.screenshot({
+        path: 'screenshot-1.png',
+    });
     setTimeout(() => { browser.close(); }, 6000);
 }
 start('https://www.prusaprinters.org/prints/124233-stackable-tray-for-lego/files')
