@@ -10,14 +10,17 @@ async function start(url) {
     await page.goto(url)
     await page.setViewport({ width: 2560, height: 1600 })
     await navigationPromise
-    //await page.waitForSelector('app-market-downloads > .download-item > .download-wrapper > .btn > .fa')
-    //await page.click('app-market-downloads > .download-item > .download-wrapper > .btn > .fa')
+
     
+    await page.waitForTimeout(2000); // wait for 5 seconds
     await page.waitForSelector('#onetrust-accept-btn-handler')
     await page.click('#onetrust-accept-btn-handler')
+    await page.waitForTimeout(2000); // wait for 5 seconds
     
-    await page.waitForSelector('app-market-downloads:nth-child(1) > .download-item > .download-wrapper > .btn > .fa')
-    await page.click('app-market-downloads:nth-child(1) > .download-item > .download-wrapper > .btn > .fa')
+    await page.waitForSelector('app-market-downloads > .download-item > .download-wrapper > .btn > .fa')
+    await page.click('app-market-downloads > .download-item > .download-wrapper > .btn > .fa')
+    //await page.waitForSelector('app-market-downloads:nth-child(1) > .download-item > .download-wrapper > .btn > .fa')
+    //await page.click('app-market-downloads:nth-child(1) > .download-item > .download-wrapper > .btn > .fa')
     
     await page.waitForSelector('.detail-grid > .detail-content > .download-btn > .d-flex > .download-count')
     let element = await page.$('.detail-grid > .detail-content > .download-btn > .d-flex > .download-count')
