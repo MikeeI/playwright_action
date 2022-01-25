@@ -27,6 +27,11 @@ jobs:
       - name: Download
         run: |
           node push_1.js
+      - name: Upload
+        run: |
+          chmod +x imgur.sh
+          chmod +x upload.sh
+          bash upload.sh 
   prusa_download_2:
     runs-on: ubuntu-latest
     timeout-minutes: 3
@@ -46,3 +51,8 @@ jobs:
       - name: Download
         run: |
           node push_2.js
+      - name: Upload
+        run: |
+          chmod +x imgur.sh
+          chmod +x upload.sh
+          bash upload.sh 
