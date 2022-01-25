@@ -29,4 +29,4 @@ async function start(url) {
     });
     setTimeout(() => { browser.close(); }, 6000);
 }
-start('https://www.prusaprinters.org/prints/124233-stackable-tray-for-lego/files')
+start('https://www.prusaprinters.org/prints/121028-button-wall-hook/files')
