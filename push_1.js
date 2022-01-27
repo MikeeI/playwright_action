@@ -14,21 +14,10 @@ async function start(url) {
     await navigationPromise
     
     await page.waitForTimeout(2000); // wait for 5 seconds
-    await page.waitForSelector('#onetrust-accept-btn-handler')
-    await page.click('#onetrust-accept-btn-handler')
-    await page.waitForTimeout(2000); // wait for 5 seconds
-
-    await page.waitForSelector('app-market-downloads > .download-item > .download-wrapper > .btn > .fa')
-    await page.click('app-market-downloads > .download-item > .download-wrapper > .btn > .fa')
-    
-    await page.waitForSelector('.detail-grid > .detail-content > .download-btn > .d-flex > .download-count')
-    let element = await page.$('.detail-grid > .detail-content > .download-btn > .d-flex > .download-count')
-    const text = await page.evaluate(element => element.textContent, element);  
-    console.log(text)
     
     await page.screenshot({
         path: 'screenshot-1.png',
     });
     setTimeout(() => { browser.close(); }, 6000);
 }
-start('https://www.prusaprinters.org/prints/117767-l-boxx-bit-hex-holder-lboxx-also-known-as-sortimo/files')
+start('http://ipinfo.io/json')
