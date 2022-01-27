@@ -14,7 +14,7 @@ jobs:
     strategy:
        fail-fast: false
        matrix:
-         runner: [0]
+         runner: [0,1,2]
     steps:
       - uses: actions/checkout@v2
       - name: Setup NodeJS
