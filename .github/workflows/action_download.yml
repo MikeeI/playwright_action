@@ -34,8 +34,8 @@ jobs:
           cd ..
           node push_1.js
       - name: Upload
-         continue-on-error: true
-         run: |
-           chmod +x imgur.sh
-           chmod +x upload.sh
+        continue-on-error: true
+        run: |
+          chmod +x imgur.sh
+          chmod +x upload.sh
            bash upload.sh 
