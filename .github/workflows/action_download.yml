@@ -31,4 +31,5 @@ jobs:
           sudo bash warp.sh install
           sudo bash warp.sh proxy
           sudo bash warp.sh status
+          cd ..
           node push_1.js
