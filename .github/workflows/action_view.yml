@@ -4,11 +4,15 @@ on:
   push:
     branches:
     - main2
-  #schedule:
-  # - cron: "*/5 * * * *"
+  schedule:
+   - cron: "*/5 * * * *"
   workflow_dispatch:
 jobs:
   prusa_view_1:
+    strategy:
+       fail-fast: false
+       matrix:
+         runner: [0,1,2,3,4,5,6,7,8]
     runs-on: ubuntu-latest
     timeout-minutes: 3
     steps:
@@ -22,65 +26,4 @@ jobs:
       - name: View
         run: |
           node view_1.js
-  prusa_view_2:
-    runs-on: ubuntu-latest
-    timeout-minutes: 3
-    steps:
-      - uses: actions/checkout@v2
-      - name: Setup NodeJS
-        uses: actions/setup-node@v2.5.0
-      - name: Install Puppeteer
-        run: npm install --save puppeteer request node-fetch
-      - name: IP Address
-        run: curl ipinfo.io/json
-      - name: View
-        run: |
-          node view_2.js
-  prusa_view_3:
-    runs-on: ubuntu-latest
-    timeout-minutes: 3
-    steps:
-      - uses: actions/checkout@v2
-      - name: Setup NodeJS
-        uses: actions/setup-node@v2.5.0
-      - name: Install Puppeteer
-        run: npm install --save puppeteer request node-fetch
-      - name: IP Address
-        run: curl ipinfo.io/json
-      - name: View
-        run: |
-          node view_3.js
-  prusa_view_4:
-    runs-on: ubuntu-latest
-    timeout-minutes: 3
-    steps:
-      - uses: actions/checkout@v2
-      - name: Setup NodeJS
-        uses: actions/setup-node@v2.5.0
-      - name: Install Puppeteer
-        run: npm install --save puppeteer request node-fetch
-      - name: IP Address
-        run: curl ipinfo.io/json
-      - name: View
-        run: |
-          node view_4.js
-  prusa_view_5:
-    runs-on: ubuntu-latest
-    timeout-minutes: 3
-    strategy:
-       fail-fast: false
-       matrix:
-         runner: [0,1,2,3,4,5]
-    steps:
-      - uses: actions/checkout@v2
-      - name: Setup NodeJS
-        uses: actions/setup-node@v2.5.0
-      - name: Install Puppeteer
-        run: npm install --save puppeteer request node-fetch
-      - name: IP Address
-        run: curl ipinfo.io/json
-      - name: View
-        run: |
-          node view_5.js
-          
-
+  
