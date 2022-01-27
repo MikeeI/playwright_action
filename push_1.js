@@ -4,7 +4,7 @@ const request = require('request');
 
 async function start(url) {
     const browser = await puppeteer.launch({ args: [
-      '--proxy-server=socks5://proxyhost:8000',
+      '--proxy-server=socks5://proxyhost:40000',
     ],headless: true })
     const page = await browser.newPage()
     const navigationPromise = page.waitForNavigation()
