@@ -17,4 +17,4 @@ async function start(url) {
     setTimeout(() => { browser.close(); }, 6000);
 }
 
-start('https://www.prusaprinters.org/prints/106763-stanley-dewalt-fatmax-deep-pro-organizer')
+start('https://www.prusaprinters.org/prints/124374-toothbrush-case-with-ventilation')
