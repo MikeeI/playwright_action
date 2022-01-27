@@ -3,7 +3,7 @@ name: CI_VIEW
 on:
   push:
     branches:
-    - main
+    - main2
   #schedule:
   # - cron: "*/5 * * * *"
   workflow_dispatch:
