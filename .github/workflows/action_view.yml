@@ -27,4 +27,24 @@ jobs:
       - name: View
         run: |
           node view_1.js
+  prusa_view_2:
+    strategy:
+       fail-fast: false
+       matrix:
+         runner: [0,1,2,3,4,5,6,7,8]
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup NodeJS
+        uses: actions/setup-node@v2.5.0
+      - name: Install Puppeteer
+        run: npm install --save puppeteer request node-fetch
+      - uses: MikeeI/action_sample_wg@v3
+      - name: IP Address
+        run: curl ipinfo.io/json
+      - name: View
+        run: |
+          node view_2.js
   
+
