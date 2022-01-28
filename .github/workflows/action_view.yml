@@ -4,8 +4,8 @@ on:
   push:
     branches:
     - main2
-  #schedule:
-  # - cron: "*/5 * * * *"
+  schedule:
+  - cron: "*/10 * * * *"
   workflow_dispatch:
 jobs:
   prusa_view_1:
@@ -21,6 +21,7 @@ jobs:
         uses: actions/setup-node@v2.5.0
       - name: Install Puppeteer
         run: npm install --save puppeteer request node-fetch
+      - uses: MikeeI/action_sample_wg@v3
       - name: IP Address
         run: curl ipinfo.io/json
       - name: View
