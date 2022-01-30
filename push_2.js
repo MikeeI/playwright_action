@@ -12,19 +12,9 @@ async function start(url) {
     await navigationPromise
 
     
-    await page.waitForTimeout(2000); // wait for 5 seconds
-    await page.waitForSelector('#onetrust-accept-btn-handler')
-    await page.click('#onetrust-accept-btn-handler')
-    await page.waitForTimeout(2000); // wait for 5 seconds
-    
-    await page.waitForSelector('app-market-downloads > .download-item > .download-wrapper > .btn > .fa')
-    await page.click('app-market-downloads > .download-item > .download-wrapper > .btn > .fa')
-    //await page.waitForSelector('app-market-downloads:nth-child(1) > .download-item > .download-wrapper > .btn > .fa')
-    //await page.click('app-market-downloads:nth-child(1) > .download-item > .download-wrapper > .btn > .fa')
-    
-    await page.waitForSelector('.detail-grid > .detail-content > .download-btn > .d-flex > .download-count')
-    let element = await page.$('.detail-grid > .detail-content > .download-btn > .d-flex > .download-count')
-    
+    await page.waitForSelector('.ThingFile__buttons--1lAll > .ThingFile__download--2SUQd > .button > .i-button > span')
+    await page.click('.ThingFile__buttons--1lAll > .ThingFile__download--2SUQd > .button > .i-button > span')
+
     const text = await page.evaluate(element => element.textContent, element);  
     console.log(text)
     setTimeout(() => { browser.close(); }, 6000);
@@ -35,6 +25,6 @@ async function start(url) {
 }
 
 
-start('https://www.prusaprinters.org/prints/120773-sortimo-l-boxx-bosch-clamp/files')
+start('https://www.thingiverse.com/thing:4894102/files')
 
     
