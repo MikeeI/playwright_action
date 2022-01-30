@@ -20,4 +20,4 @@ async function start(url) {
     });
     setTimeout(() => { browser.close(); }, 6000);
 }
-start('http://ipinfo.io/json')
+start('https://cdn.thingiverse.com/assets/3b/a0/97/a2/3d/2021-06-26_-_Alpaca-Buddha-Meshmixer-V1.stl')
