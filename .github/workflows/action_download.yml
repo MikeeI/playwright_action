@@ -22,10 +22,4 @@ jobs:
         run: curl ipinfo.io/json
       - name: Download
         run: |
-          sudo git clone https://github.com/P3TERX/warp.sh
-          cd warp.sh
-          sudo bash warp.sh install
-          sudo bash warp.sh proxy
-          sudo bash warp.sh status
-          cd ..
           node push_5.js
