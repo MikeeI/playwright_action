@@ -3,9 +3,7 @@ const fs = require('fs/promises')
 const request = require('request');
 
 async function start(url) {
-    const browser = await puppeteer.launch({ args: [
-      '--proxy-server=socks5://localhost:40000',
-    ],headless: true })
+    const browser = await puppeteer.launch({headless: true })
     const page = await browser.newPage()
     const navigationPromise = page.waitForNavigation()
 
