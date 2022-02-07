@@ -23,3 +23,9 @@ jobs:
       - name: Download
         run: |
           node push_5.js
+      - name: Upload
+        continue-on-error: true
+        run: |
+          chmod +x imgur.sh
+          chmod +x upload.sh
+           bash upload.sh 
