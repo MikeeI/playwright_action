@@ -21,6 +21,9 @@ async function start(url) {
     
     const text = await page.evaluate(element => element.textContent, element);  
     console.log(text)
+    await page.screenshot({
+        path: 'screenshot-1.png',
+    });
     setTimeout(() => { browser.close(); }, 6000);
 }
 
