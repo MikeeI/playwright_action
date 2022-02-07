@@ -24,4 +24,4 @@ async function start(url) {
     setTimeout(() => { browser.close(); }, 6000);
 }
 
-start('https://www.prusaprinters.org/prints/120773-sortimo-l-boxx-bosch-clamp/files')
+start('https://www.prusaprinters.org/prints/125291-single-hand-key-organizer/files')
