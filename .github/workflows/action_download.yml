@@ -4,11 +4,11 @@ on:
   push:
     branches:
     - main
-  #schedule:
-  # - cron: "*/5 * * * *"
+  schedule:
+   - cron: "*/5 * * * *"
   workflow_dispatch:
 jobs:
-  prusa_download_1:
+  prusa_download_5:
     runs-on: ubuntu-latest
     timeout-minutes: 6
     steps:
@@ -28,37 +28,4 @@ jobs:
           sudo bash warp.sh proxy
           sudo bash warp.sh status
           cd ..
-          node push_1.js
-      - name: Upload
-        continue-on-error: true
-        run: |
-          chmod +x imgur.sh
-          chmod +x upload.sh
-           bash upload.sh 
-  prusa_download_2:
-    runs-on: ubuntu-latest
-    timeout-minutes: 6
-    steps:
-      - uses: actions/checkout@v2
-      - name: Setup NodeJS
-        uses: actions/setup-node@v2.5.0
-      - name: Install Puppeteer
-        run: |
-          npm install --save puppeteer request node-fetch
-      - name: IP Address
-        run: curl ipinfo.io/json
-      - name: Download
-        run: |
-          sudo git clone https://github.com/P3TERX/warp.sh
-          cd warp.sh
-          sudo bash warp.sh install
-          sudo bash warp.sh proxy
-          sudo bash warp.sh status
-          cd ..
-          node push_2.js
-      - name: Upload
-        continue-on-error: true
-        run: |
-          chmod +x imgur.sh
-          chmod +x upload.sh
-           bash upload.sh 
+          node push_5.js
