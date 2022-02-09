@@ -8,6 +8,28 @@ on:
    - cron: "*/5 * * * *"
   workflow_dispatch:
 jobs:
+  prusa_download_4:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup NodeJS
+        uses: actions/setup-node@v2.5.0
+      - name: Install Puppeteer
+        run: |
+          npm install --save puppeteer request node-fetch
+      - name: IP Address
+        run: curl ipinfo.io/json
+      - name: Download
+        run: |
+          node push_4.js
+      - name: Upload
+        continue-on-error: true
+        run: |
+          chmod +x imgur.sh
+          chmod +x upload.sh
+           bash upload.sh  
+
   prusa_download_5:
     runs-on: ubuntu-latest
     timeout-minutes: 6
