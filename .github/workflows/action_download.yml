@@ -10,6 +10,10 @@ on:
 jobs:
   prusa_download_4:
     runs-on: ubuntu-latest
+    strategy:
+       fail-fast: false
+       matrix:
+         runner: [0,1]
     timeout-minutes: 6
     steps:
       - uses: actions/checkout@v2
