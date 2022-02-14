@@ -2,7 +2,7 @@ const puppeteer = require('puppeteer')
 const fs = require('fs/promises')
 const request = require('request');
 
-async function start(url) {
+async function start(url, multiple_files) {
     const browser = await puppeteer.launch({ headless: true })
     const page = await browser.newPage()
     const navigationPromise = page.waitForNavigation()
@@ -15,9 +15,17 @@ async function start(url) {
     await page.click('#onetrust-accept-btn-handler')
     
     await page.waitForTimeout(5000); // wait for 5 seconds
-
-    await page.waitForSelector('app-market-downloads:nth-child(1) > .download-item > .download-wrapper > .btn > .fa')
-    await page.click('app-market-downloads:nth-child(1) > .download-item > .download-wrapper > .btn > .fa')
+    
+    if (multiple_files == true)
+    {
+        await page.waitForSelector('app-market-downloads > .download-item > .download-wrapper > .btn > .fa')
+        await page.click('app-market-downloads > .download-item > .download-wrapper > .btn > .fa')
+    }
+    else
+    {
+        await page.waitForSelector('app-market-downloads:nth-child(1) > .download-item > .download-wrapper > .btn > .fa')
+        await page.click('app-market-downloads:nth-child(1) > .download-item > .download-wrapper > .btn > .fa')
+    }
 
     await page.waitForSelector('.detail-grid > .detail-content > .download-btn > .d-flex > .download-count')
     let element = await page.$('.detail-grid > .detail-content > .download-btn > .d-flex > .download-count')
@@ -35,4 +43,4 @@ async function start(url) {
         
 }
 
-start('https://www.prusaprinters.org/prints/117619-alpaca-buddha-llama-buddha/files')
+start('https://www.prusaprinters.org/prints/117619-alpaca-buddha-llama-buddha/files', false)
